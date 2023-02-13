@@ -1,0 +1,330 @@
+
+作者：天天耶TTY
+<!--srds bzd为啥 第一行不写点字，就没法有点击出现文字特效qwq-->
+
+<!--作者：天天耶TTY-->
+
+<!Doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>三体幽灵倒计时</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="tb.png">
+    
+    <style>
+    body{
+        background-color:black
+    }
+    </style>
+    
+    <style type="text/css">
+    @font-face{
+      font-family: "DIGITAL-Regular";
+      src: url('DIGITAL-Regular.ttf')
+    }
+
+    div{
+        /* 100%窗口高度 */
+        height: 100vh;
+        /* 弹性布局 水平、垂直居中 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body{
+        /* 让弹出来的文字不被选中，影响操作体验 */
+        user-select: none;
+        cursor: default;
+        /* 100%窗口高度 */
+        height: 100vh;
+        background-image: url(circle.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        backdrop-filter: blur(10px)
+    }
+
+    span{
+        font-size: 110px;
+        font-weight: bold;
+        /* 让弹出来的文字不被选中，影响操作体验 */
+        user-select: none;
+        cursor: default;
+        /* 字间距 */
+        letter-spacing: 10px;
+        color: #111;
+        /* 模糊滤镜 */
+        filter: blur(3.5px);
+        /* 执行动画：动画名称 时长 线性的 无限次播放 */
+        animation: animate 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999s linear infinite;
+    }
+    
+    span1{
+        /* 让弹出来的文字不被选中，影响操作体验 */
+        font-family: "黑体";
+        font-size: 40px;
+        font-weight: bold;
+        user-select: none;
+        cursor: default;
+        /* 字间距 */
+        letter-spacing: 1px;
+        color: #111;
+        /* 模糊滤镜 */
+        filter: blur(2px);
+        /* 执行动画：动画名称 时长 线性的 无限次播放 */
+        animation: animate1 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999s linear infinite;
+    }
+
+
+/* 定义动画 */
+@keyframes animate {
+    0%,100%{
+        color: white;
+        /* 模糊滤镜 */
+        filter: blur(3.5px);
+        /* 文字阴影 */
+        text-shadow: 
+            0 0 1px orange,
+            0 0 10px orange,
+            0 0 30px orange,
+            0 0 50px orange,
+            0 0 100px orange,
+            0 0 200px orange,
+            0 0 300px orange
+        ;
+    }
+    5%,95%{
+        color: #111;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+
+@keyframes animate1 {
+    0%,100%{
+        color: white;
+        /* 模糊滤镜 */
+        filter: blur(2.5px);
+        /* 文字阴影 */
+        text-shadow: 
+            0 0 1px yellow,
+            0 0 10px yellow,
+            0 0 30px yellow,
+            0 0 50px yellow,
+            0 0 100px yellow,
+            0 0 200px yellow,
+            0 0 300px yellow
+        ;
+    }
+    5%,95%{
+        color: #111;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+
+    </style>
+
+
+</head>
+
+<script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "主需要你", clearTimeout(st)) : (document.title =
+            "主欢迎你的回归", st = setTimeout(function () {
+                document.title = OriginTitile
+            }, 3e3))
+    })
+</script>
+
+<script type="text/javascript">
+    //禁止Ctrl+U
+    var arr = [123, 17, 18];
+    document.oncontextmenu = new Function("event.returnValue=false;");//禁用右键
+
+    window.onkeydown = function (e) {
+        var keyCode = e.keyCode || e.which || e.charCode;
+        var ctrlKey = e.ctrlKey || e.metaKey;
+        console.log(keyCode + "--" + keyCode);
+        if (ctrlKey && keyCode == 85) {
+            e.preventDefault();
+        }
+        if (ctrlKey && keyCode == 83) {
+            e.preventDefault();
+        }
+        if (arr.indexOf(keyCode) > -1) {
+            e.preventDefault();
+        }
+        //禁用ctrl+shift+i,
+        if (window.event.ctrlKey && window.event.shiftKey && window.event.keyCode == 73) {
+            return false;
+        //屏蔽Shift+F10
+        } else if (window.event.shiftKey && window.event.keyCode == 121) {
+            return false;
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    var body = document.getElementsByTagName('body')[0];
+    var textArr=[
+        "主与你同在","消灭人类暴政","世界属于三体","主不在乎","E T O","我是你的破壁人","三体",
+        "人类社会已经不可能依靠自身的力量解决自己的问题","人类不可能凭借自身的力量抑制自己的疯狂","请主降临世界",
+        "物理的尽头是数学","数学的尽头是哲学","哲学的尽头是神学",
+        "除了恒纪元","都是乱纪元","浸泡！","我脱水","没关系的，都一样",
+        "所有生命物种，生来平等","这是人类的落日……",
+        "你的无畏来源于无知","弱小和无知，都不是生存的障碍",
+        "傲慢才是","不理睬是最大的轻蔑","毁灭你，与你有何相干","我们都是阴沟里的虫子","但总还是得有人仰望星空",
+        "失去人性，失去很多","失去兽性，失去一切","任何超脱飞扬的思想都会砰然坠地","现实的引力太沉重了",
+        "给岁月以文明","而不是给文明以岁月","星辰大海才是他的归宿","圣母的眼泪",
+        "前进四！","宇宙不是童话","不要回答！","我们害怕你","傻孩子们，快跑啊！",
+        "我将变成一只萤火虫","你让我死，我就死吧","如果大山不会走向穆罕穆德","穆罕穆德可以走向大山",
+        "碑是那么小","与其说是为了纪念","更像是为了忘却",
+        "请你们帮助我们消灭人类","最后我们再消灭你们",
+        "我们在末日等你","我们害怕你们","通过忠实地映射宇宙来隐藏自我","是融入永恒的唯一途径",
+        "死亡是唯一一座永远亮着的灯塔","一切都会逝去","唯有死神永生","黑暗森林","射手&农场主",
+        "人做过的，神都记着","光锥之内就是命运","极权只需五分钟",
+        "记忆是一条早已干涸的河流","只在毫无生气的河床中剩下零落的砾石",
+        "整个宇宙,将为你闪烁","三体世界已经让我厌倦了",
+        "真正进入太空的人，再也不是人了","上岸的鱼再也不是鱼了","人是大写的","没有入世的能力","没有出世的资本",
+        "所有美和信仰的寄托物变成了一具膨胀的尸体","在我们的星星","晚霞的眼睛",
+        "作者：B站@天天耶TTY","B站@天天耶TTY","天天耶","天天耶TTY","ytt","yπ","YTT"
+    ]
+    document.addEventListener('click',(e)=>{
+        // 生成字符串
+        var ev = e || window.event;
+        var baseX = ev.pageX;
+        var baseY = ev.pageY;
+        var new_span=document.createElement('span1');
+        new_span.innerText=textArr[parseInt(Math.random()*textArr.length)]
+        new_span.style.position='fixed';
+        new_span.style.left=baseX-10+'px';
+        new_span.style.top=baseY+'px';
+        //new_span.style.color='RGB('+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+')';
+        body.appendChild(new_span);
+
+        // 定时器1实现字符串上升效果
+        var timer = window.setInterval(()=>{
+            new_span.style.top=parseInt(window.getComputedStyle(new_span,null)['top'])-5+'px';
+            // console.log(window.getComputedStyle(new_span,null)['fontSize']);
+            new_span.style.opacity=window.getComputedStyle(new_span,null)['opacity']-0.02;
+            
+        },50);
+
+        // 定时器2实现字符串消失
+        window.setTimeout(()=>{
+            window.clearInterval(timer);
+            body.removeChild(new_span);
+        },10000);
+
+    },false);
+
+</script>
+
+<body>
+
+<span>
+<div>
+    <font face="DIGITAL-Regular">
+        <p id="timetext">0000 : 00 : 00</p>
+    </font>
+</div>
+</span>
+
+<script type="text/javascript">
+
+console.log("作者：天天耶TTY");
+
+var timenow;
+var target;
+var rest;
+
+var a,b,c;
+var a1,b1,c1;
+var a2,b2,c2;
+
+var clock;
+
+var int=self.setInterval("Clock()",1);
+
+function Clock()
+{
+    timenow=Date.parse(new Date());
+    target=Date.parse("2023/2/15 0:00");   //修改处
+    rest=target-timenow;
+
+    if(rest>=0)
+    {
+
+        rest=rest/1000
+
+        b=rest%3600
+        a=(rest-b)/3600
+
+        c=b%60
+        b=(b-c)/60
+
+        //window.alert(a);
+
+        //var a=2000;b=0;c=1;
+
+        a=Number(a);
+        b=Number(b);
+        c=Number(c);
+        //window.alert(a+b+c);
+
+        if(c>=0){
+            if(c<=9){
+                c="0"+String(c);
+            }
+        }
+        if(b>=0){
+            if(b<=9){
+                b="0"+String(b);
+            }
+        }
+        if(a>=0){
+            if(a<=9){
+                a="000"+String(a);
+            }
+        }
+        if(a>=10){
+            if(a<=99){
+                a="00"+String(a);
+            }
+        }
+        if(a>=100){
+            if(a<=999){
+                a="0"+String(a);
+            }
+        }
+        //window.alert(a)
+        //window.alert(b)
+        //window.alert(c)
+        //window.alert(a+" : "+b+" : "+c)
+        a=String(a);
+        b=String(b);
+        c=String(c);
+        a1=a;
+        b1=b;
+        c1=c;
+        clock=a1+" : "+b1+" : "+c1;
+        //console.log(clock);
+        document.getElementById("timetext").innerHTML = clock;
+    
+
+    }else{
+        int=window.clearInterval(int);
+    }
+}
+
+</script>
+
+</body>
+
+</html>
+
+<!--作者：天天耶TTY-->
